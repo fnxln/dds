@@ -7,8 +7,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
-  outputs = { nixpkgs, home-manager, hyprland, ... }@ inputs:
+  outputs = { nixpkgs, home-manager, hyprland, emacs-overlay, ... }@ inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -18,14 +19,13 @@
 
     in
     {
+      
       homeConfigurations.lin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./users/lin/home.nix
         ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
       };
       nixosConfigurations = {
         diarreia = nixpkgs.lib.nixosSystem {
@@ -36,6 +36,10 @@
               programs.hyprland = {
                 enable = true;
               };
+
+            }
+            {
+              
             }
           ];
           specialArgs = { inherit inputs; };
