@@ -1,9 +1,9 @@
 ![](https://raw.githubusercontent.com/fnxln/dds/main/assets/logo.png)
 
 # Languages:
+<a href="https://github.com/fnxln/dds/blob/main/README_PT-BR.md">![Portugues](https://img.shields.io/badge/%F0%9F%87%A7%F0%9F%87%B7-Portugues-green)</a>
+<a href="https://github.com/fnxln/dds/">![English](https://img.shields.io/badge/%F0%9F%87%AC%F0%9F%87%A7-English%20Version-blue)</a>
 
-<a href="https://google.com">![](https://img.shields.io/badge/%F0%9F%87%A7%F0%9F%87%B7-Versao%20Em%20Portugues-green)</a>
-<a href="https://google.com">![](https://img.shields.io/badge/%F0%9F%87%AC%F0%9F%87%A7-English%20Version-blue)</a>
 
 # O que é esse repositório? 
 
