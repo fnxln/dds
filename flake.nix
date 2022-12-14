@@ -8,15 +8,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
-  outputs = { nixpkgs, home-manager, hyprland, emacs-overlay, ... }@ inputs:
+  outputs = { nixpkgs, home-manager, hyprland, emacs-overlay, rust-overlay, ... }@ inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         config = { allowUnfree = true; };
       };
-
     in
     {
       
@@ -24,6 +24,10 @@
         inherit pkgs;
         modules = [
           ./users/lin/home.nix
+            ({ pkgs, ... }: {
+            nixpkgs.overlays = [ rust-overlay.overlays.default emacs-overlay.overlay ];
+            home.packages = [ pkgs.rust-bin.stable.latest.default ];
+          })
         ];
 
       };
@@ -37,9 +41,6 @@
                 enable = true;
               };
 
-            }
-            {
-              
             }
           ];
           specialArgs = { inherit inputs; };

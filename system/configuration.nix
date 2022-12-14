@@ -21,6 +21,7 @@
     # Virtual Microphone, built-in
     "snd-aloop"
   ];
+  services.tor.enable = true;
 
   boot.extraModprobeConfig = ''
     # exclusive_caps: Skype, Zoom, Teams etc. will only show device when actually streaming
@@ -60,12 +61,6 @@
   # For 32 bit applications
   hardware.opengl.driSupport32Bit = true;
 
-  # Configure keymap in X11
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = {
-  #   "eurosign:e";
-  #   "caps:escape" # map caps to escape.
-  # };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -78,20 +73,14 @@
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
   };
-  # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enmable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lin = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
-    packages = with pkgs; [
-    ];
+    # packages = with pkgs; [
+    # ];
   };
   services.dbus.enable = true;
   xdg.portal = {
@@ -131,21 +120,10 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
   services.flatpak.enable = true;
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-
 }
 

@@ -5,5 +5,7 @@
   home.packages = with pkgs; [
     nixpkgs-fmt
     nil
+    nodejs
+    yarn
   ];
 }
