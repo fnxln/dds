@@ -30,8 +30,8 @@
         modules = [
           ./users/lin/home.nix
           ({ pkgs, ... }: {
-            nixpkgs.overlays = [ rust-overlay.overlays.default emacs-overlay.overlay ];
-            home.packages = [ pkgs.rust-bin.stable.latest.default pkgs.emacsPgtk ];
+            nixpkgs.overlays = [ rust-overlay.overlays.default emacs-overlay.overlay hyprland.overlays.default ];
+            home.packages = [ pkgs.rust-bin.stable.latest.default pkgs.emacsPgtk pkgs.waybar-hyprland ];
           })
         ];
 

@@ -3,7 +3,6 @@
 
   home.packages = with pkgs; [
     alacritty
-    waybar
     mako
     wofi
     bitwarden
@@ -11,5 +10,6 @@
     swaybg
     pcmanfm
     mpvpaper
+    imv
   ];
 }
