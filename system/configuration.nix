@@ -32,7 +32,7 @@
   # Enable ledger support
   hardware.ledger.enable = true;
 
-
+  nix.trustedUsers = [ "root" "lin" ];
   nixpkgs.config = {
     # Allow proprietary packages
     allowUnfree = true;
