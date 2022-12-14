@@ -31,6 +31,10 @@
   # dotfiles configuration
   home.file = {
     ".config/alacritty/alacritty.yml".source = ./dotfiles/alacritty.yml;
+    ".config/bin" = {
+      source = ./dotfiles/bin;
+      recursive = true;
+    };
     ".config/hypr/hyprland.conf".source = ./dotfiles/hyprland/hyprland.conf;
   };
 
