@@ -77,11 +77,15 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lin = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "adbusers" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     # packages = with pkgs; [
     # ];
   };
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
+  programs.adb.enable = true;
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;

@@ -13,5 +13,6 @@
     slurp
     xdg-desktop-portal-wlr
     xdg-desktop-portal
+    tdesktop
   ];
 }

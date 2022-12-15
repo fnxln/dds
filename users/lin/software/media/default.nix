@@ -4,5 +4,7 @@
     obs-studio
     yt-dlp
     mpv
+    spotify
+    spicetify-cli
   ];
 }

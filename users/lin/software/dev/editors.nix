@@ -4,12 +4,6 @@
     neovim
     neovide
     vscode
-    
+    android-studio
   ];
-  programs = {
-    emacs = {
-          enable = false;
-          package = pkgs.emacs-nox;
-        };
-  };
 }
