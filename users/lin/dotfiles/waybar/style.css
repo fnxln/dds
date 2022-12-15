@@ -1,91 +1,193 @@
 * {
-	font-size:17px;
-	font-family: Input Nerd Font ;
-	border-color:transparent;
-	text-shadow:  2px 2px 0px #000000;
+  border: none;
+  font-family: JetBrainsMonoNerdFont ;
+  font-size: 16px
 }
 
 window#waybar {
-	background-color: transparent;
-}
-window#waybar:first-child > box {
-    /*margin: 4px;
-    padding: 0px 4px 0px 4px;
-    border-radius: 10px 10px ;*/
-    background-color: #282a36 ;
-    color: #f8f8f2;
-    /*border-bottom: 1px solid #bd93f9;
-    border-top: 1px solid #50fa7b;*/
-
+  /* background-color: rgba(18, 21, 29, 0.98); */
+  background-color: rgba(0,0,0,0);
+  /* background-color: rgba(0, 0, 0, 0); */
+  color: #abb2bf;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
 
-#workspaces {
-	padding: 0 4px 0 4px;
- 	font-size: 17px;
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces,
+#mode,
+#custom-media,
+#custom-fans,
+#clock,
+#idle_inhibitor,
+#language,
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#custom-power,
+#mpd,
+#custom-rofi,
+#custom-dunst,
+#tray {
+  background-color: #1e222a;
+  padding: 0 10px;
+  margin: 2px 4px 4px 4px;
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-radius: 90px;
+  background-clip: padding-box;
 }
 
 #workspaces button {
-	padding: 0 4px 0 4px;
-	background-color: transparent ;
-	color: #f8f8f2;
-	margin-bottom:2px;
-	margin-top:2px;
+  padding: 0 5px;
+  min-width: 20px;
+  color: #61afef;
+  border-radius: 50px;
+}
+
+#cpu,
+#temperature,
+#memory,
+#disk {
+  padding: 0 10px;
+  margin: 2px 4px 4px 4px;
+  background-color: #12151d;
+  border-radius: 50px;
+}
+
+#custom-dunst {
+  color: #c678dd;
+}
+
+#custom-dunst.enabled {
+  color: #c678dd;
+}
+
+#custom-dunst.dnd {
+  background-color: #c678dd;
+  color: #000000;
 }
 
 #workspaces button:hover {
-	border-color: transparent;
-	color: #ff5555;
+  background-color: rgba(0, 0, 0, 0.2)
 }
 
 #workspaces button.focused {
-	color: #50fa7b;
+  color: #c678dd;
 }
 
-#workspaces button:active {
-	color: #bd93f9;
-	background: transparent;
+#disk {
+  color: #56b6c2;
 }
 
 #workspaces button.urgent {
-	color: #ff8080;
+  color: #e06c75;
 }
-#window {
-	background-color: transparent;
-	padding: 0px 0px 0px 8px;
-	font-family: Input Nerd Font;
-/*	border-left: 1px solid #50fa7b;*/
+
+#cpu {
+  color: #d19a66;
 }
-#battery {
-	background-color: transparent;
-	padding: 0px 8px 0px 8px;
-	font-family: Input Nerd Font;
+
+#memory {
+  color: #c678dd;
 }
-#network {
-	padding: 0px 8px 0px 8px;
-	font-family: Input Nerd Font;
+
+#temperature {
+  color: #61afef;
 }
+
+#temperature.critical {
+  background-color: #e06c75;
+  color: #1e222a;
+}
+
+#custom-media {
+  background-color: #c678dd;
+  color: #1e222a;
+}
+
+#custom-fans {
+  color: #98c379;
+}
+
 #clock {
-	padding: 0px 8px 0px 8px;
-	color: #50fa7b;
- 	font-family: Input Nerd Font;
-	}
+  color: #61afef;
+  font-size: large;
+  background-color: #12151d;
+}
+
+#custom-power {
+  color: #000000;
+  background-color: #f25287;
+  border-radius: 10px;
+}
+
+#idle_inhibitor {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+}
+
+#idle_inhibitor.activated {
+  background-color: rgba(0, 0, 0, 0);
+  color: #1e222a;
+}
+
+#language {
+  color: #56b6c2;
+}
+
 #pulseaudio {
-        padding: 0px 8px 0px 8px;
-	font-family: Input Nerd Font;
+  color: #d19a66;
 }
+
+#custom-rofi {
+	color: #ffffff;
+	background-color: #008aff;
+}
+
 #pulseaudio.muted {
-	padding: 0px 8px 0px 8px;
+  background-color: #e06c75;
+  color: #1e222a;
 }
+
 #backlight {
-	padding: 0px 8px 0px 8px;
-	font-family: Input Nerd Font;
+  color: #61afef;
 }
-#memory{
-	padding: 0px 8px 0px 8px;
+
+#battery {
+  color: #98c379;
 }
-#cpu{
-	padding: 0px 8px 0px 8px;
+
+#battery.charging, #battery.plugged {
+  background-color: #98c379;
+  color: #1e222a;
 }
-#custom-ddcutil {
-	padding: 0px 8px 0px 8px;
+
+@keyframes blink {
+    to {
+        background-color: #1e222a;
+        color: #e06c75;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #e06c75;
+    color: #1e222a;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network {
+    color: #c678dd
+}
+
+#network.disconnected {
+    background-color: #e06c75;
+    color: #1e222a;
 }
