@@ -5,5 +5,6 @@
     lutris
     wine-staging
     parsec-bin
+    retroarchFull
   ];
 }

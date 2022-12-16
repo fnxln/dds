@@ -6,5 +6,9 @@
     mpv
     spotify
     spicetify-cli
+    spotifyd
+    spotify-tui
+    blender
+    ffmpeg
   ];
 }

@@ -18,7 +18,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Arc-Dark";
+      name = "Dracula";
+      package = pkgs.dracula-theme;
     };
     iconTheme = {
       name = "Papirus-Dark";
