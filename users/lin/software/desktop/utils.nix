@@ -12,5 +12,6 @@
     mpvpaper
     imv
     virt-manager
+    soundux
   ];
 }
