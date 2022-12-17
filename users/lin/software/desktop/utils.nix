@@ -11,5 +11,6 @@
     pcmanfm
     mpvpaper
     imv
+    virt-manager
   ];
 }

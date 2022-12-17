@@ -23,6 +23,20 @@
   ];
   services.tor.enable = true;
 
+  virtualisation = {
+    docker.enable = true;
+    libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        ovmf = {
+          enable = true;
+        };
+      };
+    };
+    };
+
+
   boot.extraModprobeConfig = ''
     # exclusive_caps: Skype, Zoom, Teams etc. will only show device when actually streaming
     # card_label: Name of virtual camera, how it'll show up in Skype, Zoom, Teams
@@ -32,7 +46,7 @@
   # Enable ledger support
   hardware.ledger.enable = true;
 
-  nix.trustedUsers = [ "root" "lin" ];
+  nix.trustedUsers = [ "root" "lin" "libvirt" ];
   nixpkgs.config = {
     # Allow proprietary packages
     allowUnfree = true;
@@ -77,7 +91,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lin = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "adbusers" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "adbusers" "libvirtd"]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     # packages = with pkgs; [
     # ];
