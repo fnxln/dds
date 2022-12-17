@@ -41,6 +41,11 @@
       recursive = true;
       executable = true;
     };
+    ".config/wofi" = {
+      source = ./dotfiles/wofi;
+      recursive = true;
+
+    };
     ".config/hypr/hyprland.conf".source = ./dotfiles/hyprland/hyprland.conf;
   };
 
