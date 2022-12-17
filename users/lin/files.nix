@@ -17,7 +17,11 @@
       recursive = true;
     };
     ".config/hypr/hyprland.conf".source = ./dotfiles/hyprland/hyprland.conf;
-    ".local/share/nvim/site/pack/packer/start/packer.nvim".source = pkgs.nvimPlugins.packer;
+    ".local/share/nvim/site/pack/packer/start/packer.nvim".source = fetchGit {
+      url = "https://github.com/wbthomason/packer.nvim";
+      submodules = true;
+      rev = "64ae65fea395d8dc461e3884688f340dd43950ba";
+    };
   };
 
 }
