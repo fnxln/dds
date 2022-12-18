@@ -6,6 +6,13 @@
   ];
   programs.zsh = {
     enable = true;
+    shellAliases = {
+      neovide = "env -u WAYLAND_DISPLAY neovide";
+    };
+    initExtra = 
+    "
+     $HOME/.config/bin/setvars.sh
+    ";
     autocd = true;
     oh-my-zsh = {
       enable = true;

@@ -22,6 +22,7 @@
       submodules = true;
       rev = "64ae65fea395d8dc461e3884688f340dd43950ba";
     };
+    ".npmrc".source = ./dotfiles/npmrc;
   };
 
 }

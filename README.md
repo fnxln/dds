@@ -29,3 +29,6 @@ home-manager switch --flake ~/.dotfiles#diarreia
 ```
 
 5. Ejoy! :D
+
+| oi | Caganeira |
+| - | - |

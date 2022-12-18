@@ -7,7 +7,9 @@
     nil
     nodejs
     python3.pkgs.pip
+
     python3.pkgs.wcwidth
+    clang
     yarn
   ];
 }
