@@ -11,7 +11,7 @@
     };
     initExtra = 
     "
-     $HOME/.config/bin/setvars.sh
+source $HOME/.config/bin/setvars.sh
     ";
     autocd = true;
     oh-my-zsh = {

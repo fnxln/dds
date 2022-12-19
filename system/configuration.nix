@@ -46,6 +46,8 @@
   # Enable ledger support
   hardware.ledger.enable = true;
 
+  virtualisation.virtualbox.host.enable = true;
+   virtualisation.virtualbox.host.enableExtensionPack = true;
   nix.trustedUsers = [ "root" "lin" "libvirt" ];
   nixpkgs.config = {
     # Allow proprietary packages
@@ -91,7 +93,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lin = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "adbusers" "libvirtd"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "vboxusers" "wheel" "adbusers" "libvirtd"]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     # packages = with pkgs; [
     # ];

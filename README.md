@@ -7,22 +7,23 @@
 
 # What is this repo?
 
-This is my personal configuration for *nixOS* using *flakes* and *home-manager* features 
+This is my personal configuration for _nixOS_ using _flakes_ and _home-manager_ features
 
 # How to use?
 
 This repository is meant for personal use, but if you want to use it, you can do it by following the steps below:
 
-1. Install *nixOS* on your machine (https://nixos.org/download.html#nix-quick-install)
+1. Install _nixOS_ on your machine (https://nixos.org/download.html#nix-quick-install)
 
-2. Clone the repository to *~/.dotfiles* on your home directory (or any other directory you want)
+2. Clone the repository to _~/.dotfiles_ on your home directory (or any other directory you want)
 
 3. Run the following command:
 
 ```bash
 nixos-rebuild switch --flake ~/.dotfiles#diarreia
 ```
-4. (Optional) If you want to use the *home-manager* configuration, run the following command:
+
+4. (Optional) If you want to use the _home-manager_ configuration, run the following command:
 
 ```bash
 home-manager switch --flake ~/.dotfiles#diarreia
@@ -30,5 +31,3 @@ home-manager switch --flake ~/.dotfiles#diarreia
 
 5. Ejoy! :D
 
-| oi | Caganeira |
-| - | - |
